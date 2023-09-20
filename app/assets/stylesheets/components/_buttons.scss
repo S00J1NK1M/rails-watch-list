@@ -1,0 +1,23 @@
+.button {
+  margin: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.custom-btn {
+  width: 220px;
+  height: 50px;
+  color: white;
+  background: rgb(0, 0, 0);
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+
+}
+
+.custom-btn a:link {
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,9 +1,25 @@
-<h1>Welcome to Movie Watch List 🎥</h1>
+<div class="container">
+  <div class="card-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('banner_film.jpg') %>)">
+  <h1>Welcome to Movie Watch List 🎥</h1>
+  </div>
+</div>
 
-<ul class="lists">
-  <% @lists.each do |list| %>
-    <li class="list"><%= link_to list.name, list %></li>
-  <% end %>
-</ul>
-<br>
-<%= link_to "Add a new list", new_list_path %>
+<div class="container">
+  <div class="card-add">
+  <%= link_to "✍🏼 Add a new list", new_list_path %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+      <% @lists.each do |list| %>
+        <div class="co-12 col-sm-6 col-md-4 mb-3">
+          <%= link_to list_path(list), class:"text-decoration-none" do %>
+            <div class="card-list" data-aos="zoom-in" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('card_bg.jpg') %>)">
+              <mark style="background-color: #cce0d6;"><%= list.name %></mark>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>

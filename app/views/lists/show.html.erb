@@ -1,14 +1,14 @@
-<%= render @list %>
+<div class="container">
+  <div class="card-list-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= asset_path('card_bg.jpg') %>)">
+  <h2><strong><%= @list.name %></strong><h2>
+  <h3>Watch-list 🍿</h3>
+  </div>
+</div>
 
-<h2>Details of <%= @list.name %></h2>
-
-<ul>
-<% @list.movies.each do |movie| %>
-<li><%= movie.title %></li>
-<% end %>
-</ul>
-
-<br>
-<%= link_to "Add a new movie", new_list_bookmark_path(@list) %>
-<br>
-<%= link_to "Back to the watch list", lists_path %>
+<div class="container">
+  <div class="button">
+    <button class="custom-btn btn-1"><span><%= link_to "Add a new bookmark", new_list_bookmark_path(@list), class: 'css_class', style: 'color:#FFFFFF' %></span></button>
+    <button class="custom-btn btn-1"><span><%= link_to "Delete this list", list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }, class: 'css_class', style: 'color:#FFFFFF'%></span></button>
+    <button class="custom-btn btn-1"><span><%= link_to "Back to Watch list", lists_path, class: 'css_class', style: 'color:#FFFFFF' %></span></button>
+  </div>
+</div>
