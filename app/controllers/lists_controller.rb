@@ -29,7 +29,7 @@ class ListsController < ApplicationController
   # POST "lists"
   def destroy
     @list.destroy
-    redirect_to lists_url, notice: "The list has been successfully destroyed.", status: :see_other
+    redirect_to lists_url, status: :see_other
   end
 
   private
